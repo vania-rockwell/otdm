@@ -19,6 +19,7 @@ export default function ApplicationPage() {
   const languageOptions = [
     { value: "en", label: tCommon("languageOption.en") },
     { value: "es", label: tCommon("languageOption.es") },
+    { value: "it", label: tCommon("languageOption.it") },
   ];
 
   return (

@@ -1,21 +1,63 @@
 {
   "dashboard": {
-    "title": "Pannello di controllo"
+    "title": "Pannello di controllo",
+    "description": "Panoramica delle metriche e dello stato piu importanti.",
+    "body": "Il pannello offre un punto di partenza per la salute generale del sistema, riepiloghi di utilizzo e attivita recenti."
   },
   "catalogs": {
-    "title": "Cataloghi"
+    "title": "Cataloghi",
+    "description": "Esplora e gestisci i cataloghi disponibili per la configurazione.",
+    "body": "Usa i cataloghi per consultare entita disponibili, organizzare sorgenti e definire strutture riutilizzabili."
   },
   "parameters": {
-    "title": "Parametri"
+    "title": "Parametri",
+    "description": "Definisci e gestisci i parametri di configurazione.",
+    "body": "I parametri controllano il comportamento del sistema e i valori predefiniti nei moduli configurati.",
+    "loading": "Caricamento parametri...",
+    "loadError": "Impossibile caricare i parametri.",
+    "detailPlaceholder": "Seleziona un elemento nell'albero per visualizzare qui i dettagli.",
+    "detailPanel": "Dettagli",
+    "detailTabsLabel": "Sezioni dei dettagli del parametro",
+    "tabs": {
+      "general": "Generale",
+      "connectivity": "Connettivita",
+      "parameters": "Parametri",
+      "applications": "Applicazioni",
+      "deployment": "Distribuzione"
+    },
+    "tabConnectivityLead": "Connessioni in uscita e stato di salute per questa selezione (dati di esempio).",
+    "tabParametersEmpty": "Questo elemento non ha parametri figli. Seleziona un nodo ramo nell'albero per consultare qui i valori annidati.",
+    "tabApplicationsLead": "Metadati applicativi associati a questo parametro (esempio in sola lettura).",
+    "tabDeploymentLead": "Controlli tipici di distribuzione per questa configurazione:",
+    "tabDeploymentItem1": "Convalida la configurazione rispetto al profilo dell'ambiente di destinazione.",
+    "tabDeploymentItem2": "Esegui test di regressione automatici sui servizi dipendenti.",
+    "tabDeploymentItem3": "Registra note di rilascio e passaggi di rollback prima della promozione.",
+    "tabTableEmpty": "Nessuna riga da visualizzare.",
+    "connectivityColId": "Percorso",
+    "connectivityColEndpoint": "Endpoint",
+    "connectivityColStatus": "Stato",
+    "connectivityStatusOk": "Attivo",
+    "connectivityStatusStandby": "Standby",
+    "detailFormAppName": "Nome applicazione",
+    "detailFormAppVersion": "Versione",
+    "detailFormSave": "Salva",
+    "fieldId": "Identificatore",
+    "fieldValue": "Valore",
+    "fieldSubitems": "Sotto-elementi"
   },
   "templates": {
-    "title": "Modelli"
+    "title": "Modelli",
+    "description": "Crea e gestisci modelli di configurazione riutilizzabili.",
+    "body": "I modelli aiutano a standardizzare i pattern di configurazione e ridurre il lavoro ripetitivo."
   },
   "assetConfiguration": {
-    "title": "Configurazione Asset"
+    "title": "Configurazione Asset",
+    "description": "Configura comportamento, metadati e mapping degli asset.",
+    "body": "Gestisci regole e associazioni specifiche degli asset per garantire risultati di configurazione coerenti."
   },
   "application": {
-    "title": "Applicazione"
+    "title": "Applicazione",
+    "description": "Rivedi opzioni a livello applicativo e impostazioni operative."
   },
   "parametersGroups": {
     "title": "Gruppi di parametri",
@@ -48,7 +90,9 @@
     "body": "Configura qui assegnazioni permessi e regole di autorizzazione."
   },
   "security": {
-    "title": "Sicurezza"
+    "title": "Sicurezza",
+    "description": "Configura policy di accesso e impostazioni legate alla sicurezza.",
+    "body": "Usa quest'area per gestire protezioni, permessi e controlli di governance correlati."
   },
   "user": {
     "title": "Utente",
@@ -56,10 +100,13 @@
     "body": "Aggiorna le informazioni utente e consulta le impostazioni account da questa sezione."
   },
   "logOut": {
-    "title": "Esci"
+    "title": "Esci",
+    "description": "Esci dalla sessione corrente.",
+    "body": "Qui puoi implementare il flusso di logout, ad esempio pulizia dei token e reindirizzamento alla pagina di autenticazione."
   },
   "notFound": {
     "title": "Pagina non trovata",
-    "message": "La pagina che stai cercando non esiste"
+    "description": "La pagina che stavi cercando non esiste.",
+    "body": "Usa il pannello di navigazione a sinistra per tornare a una sezione valida."
   }
 }
