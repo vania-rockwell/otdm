@@ -99,6 +99,31 @@ src/
 
 ---
 
+### API Internal Router
+
+- API calls must go through `src/services/internalRouter.ts`.
+- Do not call `fetch` directly from pages or UI components.
+- Use feature/domain service functions that wrap internal router methods (`get`, `post`, `put`, `patch`, `delete`).
+- Keep endpoint strings inside service layer files (`src/services/*`) so API URLs are not spread across UI code.
+- Authentication headers and common request behavior should be handled centrally by the internal router.
+- Base URL must be read from `VITE_API_URL` (fallback to `/api`) to support environment-specific backends.
+
+**Example**
+
+```ts
+import { router } from "@/services/internalRouter";
+
+export async function getCatalogs() {
+	const response = await router.get("/catalogs");
+	if (response.error) {
+		throw new Error(response.error);
+	}
+	return response.data;
+}
+```
+
+---
+
 ### Router
 
 - All routes are defined in `src/router.tsx` using `createBrowserRouter` from `react-router-dom`.
