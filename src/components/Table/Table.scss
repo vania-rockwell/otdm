@@ -17,10 +17,10 @@
   }
 
   th {
-    background-color: rgb(var(--color-bg));
+    background-color: rgb(var(--color-primary));
     font-size: 0.875rem;
     font-weight: 600;
-    color: rgb(var(--color-text));
+    color: rgb(var(--color-surface));
   }
 
   tbody tr:hover {

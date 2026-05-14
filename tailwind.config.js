@@ -5,6 +5,8 @@ module.exports = {
       colors: {
         bg: "rgb(var(--color-bg) / <alpha-value>)",
         surface: "rgb(var(--color-surface) / <alpha-value>)",
+        light: "rgb(var(--color-light) / <alpha-value>)",
+        dark: "rgb(var(--color-dark) / <alpha-value>)",
         text: "rgb(var(--color-text) / <alpha-value>)",
         neutral: "rgb(var(--color-neutral) / <alpha-value>)",
         primary: "rgb(var(--color-primary) / <alpha-value>)",

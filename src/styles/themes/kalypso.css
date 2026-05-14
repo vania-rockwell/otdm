@@ -5,6 +5,8 @@
   --color-surface: 247 247 247;
 
   /* Neutrals */
+  --color-light: 255 255 255;
+  --color-dark: 15 15 15;
   --color-neutral: 231 231 231;
   --color-text: 15 15 15;
 
@@ -26,6 +28,8 @@
   --color-surface: 22 26 31;
 
   /* Neutrals */
+  --color-light: 15 18 22;
+  --color-dark: 232 234 237;
   --color-neutral: 64 69 74;
   --color-text: 232 234 237;
 

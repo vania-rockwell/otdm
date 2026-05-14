@@ -1,4 +1,5 @@
 import React from "react";
+import type { LucideIcon } from "lucide-react";
 import "./Button.scss";
 
 type ButtonVariant =
@@ -10,6 +11,7 @@ type ButtonVariant =
   | "info"
   | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
+type ButtonIconPosition = "start" | "end";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -31,9 +33,20 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 
   /**
+   * Lucide icon component to render alongside the label.
+   */
+  icon?: LucideIcon;
+
+  /**
+   * Position of the icon relative to the label.
+   * @default 'start'
+   */
+  iconPosition?: ButtonIconPosition;
+
+  /**
    * Button content
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -67,6 +80,12 @@ const sizeStyles: Record<ButtonSize, string> = {
  * // With click handler
  * <Button onClick={() => console.log('clicked')}>Submit</Button>
  */
+const iconSizeMap: Record<ButtonSize, number> = {
+  sm: 14,
+  md: 16,
+  lg: 18,
+};
+
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -74,6 +93,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "md",
       disabled = false,
       fullWidth = false,
+      icon: Icon,
+      iconPosition = "start",
       children,
       className = "",
       type = "button",
@@ -90,6 +111,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       .filter(Boolean)
       .join(" ");
 
+    const iconNode = Icon ? (
+      <Icon size={iconSizeMap[size]} aria-hidden="true" />
+    ) : null;
+
     return (
       <button
         ref={ref}
@@ -98,7 +123,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         {...rest}
       >
+        {iconPosition === "start" && iconNode}
         {children}
+        {iconPosition === "end" && iconNode}
       </button>
     );
   }
