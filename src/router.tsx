@@ -4,6 +4,7 @@ import DashboardPage from "./features/dashboard/DashboardPage";
 import CatalogsPage from "./features/catalogs/CatalogsPage";
 import ParametersPage from "./features/parameters/ParametersPage";
 import ParametersGroupsPage from "./features/parameters/ParametersGroupsPage";
+import ParameterCrudPage from "./features/parameters/ParameterCrudPage";
 import TemplatesPage from "./features/templates/TemplatesPage";
 import TemplatesCustomPage from "./features/templates/TemplatesCustomPage";
 import AssetConfigurationPage from "./features/asset-configuration/AssetConfigurationPage";
@@ -25,6 +26,15 @@ export const router = createBrowserRouter([
       { index: true, element: <DashboardPage /> },
       { path: "catalogs", element: <CatalogsPage /> },
       { path: "parameters", element: <ParametersPage /> },
+      { path: "parameters/new", element: <ParameterCrudPage mode="new" /> },
+      {
+        path: "parameters/:parameterId/edit",
+        element: <ParameterCrudPage mode="edit" />,
+      },
+      {
+        path: "parameters/:parameterId/delete",
+        element: <ParameterCrudPage mode="delete" />,
+      },
       { path: "parameters/groups", element: <ParametersGroupsPage /> },
       { path: "templates", element: <TemplatesPage /> },
       { path: "templates/custom", element: <TemplatesCustomPage /> },

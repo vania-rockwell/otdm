@@ -12,7 +12,46 @@
   "parameters": {
     "title": "Parametri",
     "description": "Definisci e gestisci i parametri di configurazione.",
-    "body": "I parametri controllano il comportamento del sistema e i valori predefiniti nei moduli configurati."
+    "body": "I parametri controllano il comportamento del sistema e i valori predefiniti nei moduli configurati.",
+    "searchPlaceholder": "Cerca",
+    "searchAria": "Cerca parametri",
+    "loading": "Caricamento parametri...",
+    "loadError": "Impossibile caricare i parametri.",
+    "actions": {
+      "addNew": "Aggiungi nuovo",
+      "edit": "Modifica",
+      "delete": "Elimina"
+    },
+    "table": {
+      "empty": "Nessun parametro trovato.",
+      "headers": {
+        "capabilityDomain": "Dominio capacità",
+        "name": "Nome",
+        "dataType": "Tipo di dato",
+        "contexts": "Contesti",
+        "actions": "Azioni"
+      }
+    }
+  },
+  "parameterCrud": {
+    "newTitle": "Aggiungi parametro",
+    "editTitle": "Modifica parametro",
+    "deleteTitle": "Elimina parametro",
+    "description": "Crea, aggiorna o rimuovi definizioni di parametri.",
+    "deleteWarning": "Questa azione rimuove la definizione del parametro. Conferma prima di procedere.",
+    "fields": {
+      "capabilityDomain": "Dominio capacità",
+      "name": "Nome",
+      "dataType": "Tipo di dato"
+    },
+    "actions": {
+      "addNew": "Aggiungi nuovo",
+      "addCapabilityDomain": "Aggiungi dominio capacità",
+      "create": "Crea",
+      "save": "Salva",
+      "delete": "Elimina",
+      "cancel": "Annulla"
+    }
   },
   "templates": {
     "title": "Modelli",

@@ -12,7 +12,46 @@
   "parameters": {
     "title": "Parameters",
     "description": "Define and maintain configuration parameters.",
-    "body": "Parameters control system behavior and defaults across configured modules."
+    "body": "Parameters control system behavior and defaults across configured modules.",
+    "searchPlaceholder": "Search",
+    "searchAria": "Search parameters",
+    "loading": "Loading parameters...",
+    "loadError": "Could not load parameters.",
+    "actions": {
+      "addNew": "Add New",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "table": {
+      "empty": "No parameters found.",
+      "headers": {
+        "capabilityDomain": "Capability Domain",
+        "name": "Name",
+        "dataType": "Data Type",
+        "contexts": "Contexts",
+        "actions": "Actions"
+      }
+    }
+  },
+  "parameterCrud": {
+    "newTitle": "Add Parameter",
+    "editTitle": "Edit Parameter",
+    "deleteTitle": "Delete Parameter",
+    "description": "Create, update, or remove parameter definitions.",
+    "deleteWarning": "This action removes the parameter definition. Please confirm before continuing.",
+    "fields": {
+      "capabilityDomain": "Capability Domain",
+      "name": "Name",
+      "dataType": "Data Type"
+    },
+    "actions": {
+      "addNew": "Add New",
+      "addCapabilityDomain": "Add Capability Domain",
+      "create": "Create",
+      "save": "Save",
+      "delete": "Delete",
+      "cancel": "Cancel"
+    }
   },
   "templates": {
     "title": "Templates",

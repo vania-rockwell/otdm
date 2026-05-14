@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": "batch-start",
+      "capabilityDomain": "Batch",
+      "name": "BatchStart",
+      "dataType": "Boolean",
+      "contexts": [
+        { "label": "Production", "color": "primary" },
+        { "label": "Batch", "color": "secondary" }
+      ]
+    },
+    {
+      "id": "batch-stop",
+      "capabilityDomain": "Batch",
+      "name": "BatchStop",
+      "dataType": "Boolean",
+      "contexts": [
+        { "label": "Production", "color": "primary" },
+        { "label": "Batch", "color": "secondary" }
+      ]
+    },
+    {
+      "id": "machine-event-enabled",
+      "capabilityDomain": "Machine Event",
+      "name": "MachineEventEnabled",
+      "dataType": "Boolean",
+      "contexts": [
+        { "label": "Production", "color": "primary" },
+        { "label": "Machine Event", "color": "warning" }
+      ]
+    }
+  ]
+}
