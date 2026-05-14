@@ -155,6 +155,12 @@
   text-decoration: none;
   color: rgb(var(--color-surface) / 0.92);
   transition: background-color 160ms ease, color 160ms ease;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
 
   &:hover {
     background-color: rgb(var(--color-surface) / 0.12);

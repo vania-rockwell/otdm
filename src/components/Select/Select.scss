@@ -4,6 +4,7 @@
   background-color: rgb(var(--color-bg));
   color: rgb(var(--color-text));
   padding-inline: var(--space-3);
+  padding-inline-end: var(--space-6);
   cursor: pointer;
 
   &:focus-visible {
@@ -28,5 +29,18 @@
   &--lg {
     min-height: var(--size-control-lg);
     font-size: 1.125rem;
+  }
+
+  option {
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-text));
+  }
+
+  option:hover,
+  option:focus,
+  option:checked {
+    background-color: rgb(var(--color-primary) / 0.14);
+    color: rgb(var(--color-primary));
+    box-shadow: inset 0 0 0 9999px rgb(var(--color-primary) / 0.14);
   }
 }
