@@ -43,38 +43,88 @@
 
   &--primary {
     background-color: rgb(var(--color-primary));
-    color: rgb(var(--color-bg));
+    color: rgb(var(--color-light));
   }
 
   &--secondary {
     background-color: rgb(var(--color-secondary));
-    color: rgb(var(--color-bg));
+    color: rgb(var(--color-light));
   }
 
   &--danger {
     background-color: rgb(var(--color-danger));
-    color: rgb(var(--color-bg));
+    color: rgb(var(--color-light));
   }
 
   &--success {
     background-color: rgb(var(--color-success));
-    color: rgb(var(--color-bg));
+    color: rgb(var(--color-light));
   }
 
   &--warning {
     background-color: rgb(var(--color-warning));
-    color: rgb(var(--color-bg));
+    color: rgb(var(--color-light));
   }
 
   &--info {
     background-color: rgb(var(--color-info));
-    color: rgb(var(--color-bg));
+    color: rgb(var(--color-dark));
+  }
+
+  &--blue {
+    background-color: rgb(var(--color-blue));
+    color: rgb(var(--color-light));
+  }
+
+  &--indigo {
+    background-color: rgb(var(--color-indigo));
+    color: rgb(var(--color-light));
+  }
+
+  &--purple {
+    background-color: rgb(var(--color-purple));
+    color: rgb(var(--color-light));
+  }
+
+  &--pink {
+    background-color: rgb(var(--color-pink));
+    color: rgb(var(--color-light));
+  }
+
+  &--orange {
+    background-color: rgb(var(--color-orange));
+    color: rgb(var(--color-light));
+  }
+
+  &--yellow {
+    background-color: rgb(var(--color-yellow));
+    color: rgb(var(--color-dark));
+  }
+
+  &--teal {
+    background-color: rgb(var(--color-teal));
+    color: rgb(var(--color-light));
+  }
+
+  &--cyan {
+    background-color: rgb(var(--color-cyan));
+    color: rgb(var(--color-dark));
+  }
+
+  &--gray {
+    background-color: rgb(var(--color-gray));
+    color: rgb(var(--color-light));
+  }
+
+  &--dark {
+    background-color: rgb(var(--color-dark));
+    color: rgb(var(--color-light));
   }
 
   &--ghost {
     border-color: rgb(var(--color-neutral));
-    background-color: rgb(var(--color-bg));
-    color: rgb(var(--color-text));
+    background-color: rgb(var(--color-light));
+    color: rgb(var(--color-dark));
   }
 
   &--primary:hover,
@@ -83,6 +133,16 @@
   &--success:hover,
   &--warning:hover,
   &--info:hover,
+  &--blue:hover,
+  &--indigo:hover,
+  &--purple:hover,
+  &--pink:hover,
+  &--orange:hover,
+  &--yellow:hover,
+  &--teal:hover,
+  &--cyan:hover,
+  &--gray:hover,
+  &--dark:hover,
   &--ghost:hover {
     filter: brightness(0.95);
   }

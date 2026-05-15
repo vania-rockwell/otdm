@@ -9,13 +9,23 @@ type ButtonVariant =
   | "success"
   | "warning"
   | "info"
-  | "ghost";
+  | "ghost"
+  | "blue"
+  | "indigo"
+  | "purple"
+  | "pink"
+  | "orange"
+  | "yellow"
+  | "teal"
+  | "cyan"
+  | "gray"
+  | "dark";
 type ButtonSize = "sm" | "md" | "lg";
 type ButtonIconPosition = "start" | "end";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
-   * Button variant: 'primary', 'secondary', 'danger', 'success', 'warning', 'info'
+   * Button variant: 'primary', 'secondary', 'danger', 'success', 'warning', 'info', 'ghost'
    * @default 'primary'
    */
   variant?: ButtonVariant;
@@ -57,6 +67,16 @@ const variantStyles: Record<ButtonVariant, string> = {
   warning: "btn--warning",
   info: "btn--info",
   ghost: "btn--ghost",
+  blue: "btn--blue",
+  indigo: "btn--indigo",
+  purple: "btn--purple",
+  pink: "btn--pink",
+  orange: "btn--orange",
+  yellow: "btn--yellow",
+  teal: "btn--teal",
+  cyan: "btn--cyan",
+  gray: "btn--gray",
+  dark: "btn--dark",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

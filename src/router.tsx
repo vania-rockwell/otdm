@@ -16,6 +16,7 @@ import SecurityPage from "./features/security/SecurityPage";
 import SecurityPermissionsPage from "./features/security/SecurityPermissionsPage";
 import LogOutPage from "./features/log-out/LogOutPage";
 import UserPage from "./features/user/UserPage";
+import ComponentShowcasePage from "./features/showcase/ComponentShowcasePage";
 import NotFoundPage from "./features/not-found/NotFoundPage";
 
 export const router = createBrowserRouter([
@@ -52,6 +53,7 @@ export const router = createBrowserRouter([
       { path: "security", element: <SecurityPage /> },
       { path: "security/permissions", element: <SecurityPermissionsPage /> },
       { path: "user", element: <UserPage /> },
+      { path: "showcase", element: <ComponentShowcasePage /> },
       { path: "log-out", element: <LogOutPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],

@@ -4,7 +4,7 @@
   z-index: 50;
   display: grid;
   place-items: center;
-  background-color: rgb(var(--color-text) / 0.45);
+  background-color: rgb(var(--color-dark) / 0.45);
   padding: var(--space-4);
 }
 
@@ -13,8 +13,8 @@
   border: 1px solid rgb(var(--color-neutral));
   border-radius: var(--radius-lg);
   background-color: rgb(var(--color-surface));
-  color: rgb(var(--color-text));
-  box-shadow: 0 20px 40px rgb(var(--color-text) / 0.25);
+  color: rgb(var(--color-dark));
+  box-shadow: 0 20px 40px rgb(var(--color-dark) / 0.25);
 
   &__header {
     display: flex;
@@ -35,7 +35,7 @@
     border: 1px solid rgb(var(--color-neutral));
     border-radius: var(--radius-md);
     background-color: rgb(var(--color-bg));
-    color: rgb(var(--color-text));
+    color: rgb(var(--color-dark));
     padding-inline: var(--space-3);
     cursor: pointer;
   }

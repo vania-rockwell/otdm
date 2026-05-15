@@ -8,7 +8,17 @@ type BadgeColor =
   | "success"
   | "warning"
   | "info"
-  | "neutral";
+  | "ghost"
+  | "blue"
+  | "indigo"
+  | "purple"
+  | "pink"
+  | "orange"
+  | "yellow"
+  | "teal"
+  | "cyan"
+  | "gray"
+  | "dark";
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
@@ -30,7 +40,17 @@ const colorStyles: Record<BadgeColor, string> = {
   success: "badge--success",
   warning: "badge--warning",
   info: "badge--info",
-  neutral: "badge--neutral",
+  ghost: "badge--ghost",
+  blue: "badge--blue",
+  indigo: "badge--indigo",
+  purple: "badge--purple",
+  pink: "badge--pink",
+  orange: "badge--orange",
+  yellow: "badge--yellow",
+  teal: "badge--teal",
+  cyan: "badge--cyan",
+  gray: "badge--gray",
+  dark: "badge--dark",
 };
 
 /**

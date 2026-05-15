@@ -8,7 +8,6 @@
   --color-light: 255 255 255;
   --color-dark: 15 15 15;
   --color-neutral: 231 231 231;
-  --color-text: 15 15 15;
 
   /* Brand */
   --color-primary: 144 27 49;
@@ -19,19 +18,33 @@
   --color-danger: 189 22 63;
   --color-warning: 217 164 65;
   --color-info: 174 226 224;
+
+  /* Colors */
+  --color-blue: 93 198 193;
+  --color-indigo: 124 58 237;
+  --color-purple: 147 51 234;
+  --color-pink: 219 39 119;
+  --color-red: 189 22 63;
+  --color-orange: 234 88 12;
+  --color-yellow: 217 164 65;
+  --color-green: 47 174 158;
+  --color-teal: 45 212 191;
+  --color-cyan: 174 226 224;
+  --color-white: 255 255 255;
+  --color-black: 15 15 15;
+  --color-gray: 115 115 115;
 }
 
 /* kalypso - Dark */
 :root[data-theme="kalypso"][data-mode="dark"] {
   /* Base surfaces */
   --color-bg: 15 18 22;
-  --color-surface: 22 26 31;
+  --color-surface: 38, 38, 38;
 
   /* Neutrals */
   --color-light: 15 18 22;
-  --color-dark: 232 234 237;
+  --color-dark: 255 255 255;
   --color-neutral: 64 69 74;
-  --color-text: 232 234 237;
 
   /* Brand */
   --color-primary: 185 55 75;
@@ -42,4 +55,19 @@
   --color-danger: 235 92 120;
   --color-warning: 224 181 92;
   --color-info: 128 208 204;
+
+  /* Colors */
+  --color-blue: 122 210 203;
+  --color-indigo: 165 180 252;
+  --color-purple: 192 132 252;
+  --color-pink: 244 114 182;
+  --color-red: 235 92 120;
+  --color-orange: 251 146 60;
+  --color-yellow: 224 181 92;
+  --color-green: 96 206 185;
+  --color-teal: 94 234 212;
+  --color-cyan: 128 208 204;
+  --color-white: 232 234 237;
+  --color-black: 15 18 22;
+  --color-gray: 163 163 163;
 }

@@ -20,11 +20,18 @@
     background-color: rgb(var(--color-primary));
     font-size: 0.875rem;
     font-weight: 600;
-    color: rgb(var(--color-surface));
+    color: rgb(var(--color-white));
   }
-
-  tbody tr:hover {
-    background-color: rgb(var(--color-neutral) / 0.25);
+  
+  tbody 
+  {
+    tr:hover {
+      background-color: rgb(var(--color-neutral) / 0.25);
+    }
+    
+    td {
+      color: rgb(var(--color-dark));
+    }
   }
 
   &__empty {

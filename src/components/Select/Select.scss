@@ -2,7 +2,7 @@
   border: 1px solid rgb(var(--color-neutral));
   border-radius: var(--radius-md);
   background-color: rgb(var(--color-bg));
-  color: rgb(var(--color-text));
+  color: rgb(var(--color-dark));
   padding-inline: var(--space-3);
   padding-inline-end: var(--space-6);
   cursor: pointer;
@@ -33,7 +33,7 @@
 
   option {
     background-color: rgb(var(--color-bg));
-    color: rgb(var(--color-text));
+    color: rgb(var(--color-dark));
   }
 
   option:hover,

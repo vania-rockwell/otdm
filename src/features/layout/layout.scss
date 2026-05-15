@@ -1,15 +1,19 @@
 .app-shell {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background-color: rgb(var(--color-bg));
-  color: rgb(var(--color-text));
+  color: rgb(var(--color-dark));
 
   &__body {
     display: grid;
     grid-template-columns: auto 1fr;
-    min-height: 100vh;
+    height: 100%;
   }
 
   &__main {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: var(--space-6);
   }
 }
@@ -18,7 +22,7 @@
   width: 17rem;
   height: 100vh;
   overflow: hidden;
-  border-right: 1px solid rgb(var(--color-surface) / 0.14);
+  border-right: 1px solid rgb(var(--color-white) / 0.14);
   background-color: rgb(var(--color-primary));
   padding: var(--space-4);
   transition: width 160ms ease;
@@ -48,7 +52,7 @@
       &:hover .sidebar-link__icon,
       &.is-active .sidebar-link__icon,
       &.is-active:hover .sidebar-link__icon {
-        background-color: rgb(var(--color-surface) / 1);
+        background-color: rgb(var(--color-white) / 1);
         color: rgb(var(--color-primary));
       }
     }
@@ -85,7 +89,7 @@
   &__bottom {
     margin-top: auto;
     padding-top: var(--space-4);
-    border-top: 1px solid rgb(var(--color-surface) / 0.14);
+    border-top: 1px solid rgb(var(--color-white) / 0.14);
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
@@ -101,7 +105,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: rgb(var(--color-surface) / 0.12) transparent;
+  scrollbar-color: rgb(var(--color-white) / 0.12) transparent;
 
   // Custom scrollbar styling
   &::-webkit-scrollbar {
@@ -113,11 +117,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgb(var(--color-surface) / 0.08);
+    background-color: rgb(var(--color-white) / 0.08);
     border-radius: 3px;
 
     &:hover {
-      background-color: rgb(var(--color-surface) / 0.12);
+      background-color: rgb(var(--color-white) / 0.12);
     }
   }
 }
@@ -131,13 +135,13 @@
   border: 0;
   border-radius: var(--radius-md);
   background: transparent;
-  color: rgb(var(--color-surface) / 0.95);
+  color: rgb(var(--color-white) / 0.95);
   cursor: pointer;
   padding-inline: var(--space-3);
   font: inherit;
 
   &:hover {
-    background-color: rgb(var(--color-surface) / 0.12);
+    background-color: rgb(var(--color-white) / 0.12);
   }
 }
 
@@ -153,7 +157,7 @@
   border-radius: var(--radius-md);
   padding-inline: var(--space-3);
   text-decoration: none;
-  color: rgb(var(--color-surface) / 0.92);
+  color: rgb(var(--color-white) / 0.92);
   transition: background-color 160ms ease, color 160ms ease;
   border: 0;
   background: transparent;
@@ -163,16 +167,16 @@
   text-align: left;
 
   &:hover {
-    background-color: rgb(var(--color-surface) / 0.12);
+    background-color: rgb(var(--color-white) / 0.12);
   }
 
   &.is-active {
-    background-color: rgb(var(--color-surface) / 0.95);
+    background-color: rgb(var(--color-white) / 0.95);
     color: rgb(var(--color-primary));
     font-weight: 600;
 
     &:hover {
-      background-color: rgb(var(--color-surface) / 0.98);
+      background-color: rgb(var(--color-white) / 0.98);
     }
 
     .sidebar-link__icon {
@@ -191,24 +195,24 @@
   &--level-2 {
     padding-inline: var(--space-5);
     font-size: 0.875rem;
-    color: rgb(var(--color-surface) / 0.8);
+    color: rgb(var(--color-white) / 0.8);
 
     &:hover {
-      background-color: rgb(var(--color-surface) / 0.08);
-      color: rgb(var(--color-surface) / 0.92);
+      background-color: rgb(var(--color-white) / 0.08);
+      color: rgb(var(--color-white) / 0.92);
     }
 
     &.is-active {
-      background-color: rgb(var(--color-surface) / 0.18);
-      color: rgb(var(--color-surface) / 0.95);
+      background-color: rgb(var(--color-white) / 0.18);
+      color: rgb(var(--color-white) / 0.95);
       font-weight: 600;
 
       &:hover {
-        background-color: rgb(var(--color-surface) / 0.18);
+        background-color: rgb(var(--color-white) / 0.18);
       }
 
       .sidebar-link__chevron {
-        color: rgb(var(--color-primary));
+        color: rgb(var(--color-white));
       }
     }
   }
@@ -216,24 +220,20 @@
   &--level-3 {
     padding-inline: var(--space-4);
     font-size: 0.8125rem;
-    color: rgb(var(--color-surface) / 0.75);
+    color: rgb(var(--color-white) / 0.75);
 
     &:hover {
-      background-color: rgb(var(--color-surface) / 0.06);
-      color: rgb(var(--color-surface) / 0.8);
+      background-color: rgb(var(--color-white) / 0.06);
+      color: rgb(var(--color-white) / 0.8);
     }
 
     &.is-active {
-      background-color: rgb(var(--color-surface) / 0.14);
-      color: rgb(var(--color-surface) / 0.95);
+      background-color: rgb(var(--color-white) / 0.14);
+      color: rgb(var(--color-white) / 0.95);
       font-weight: 600;
 
       &:hover {
-        background-color: rgb(var(--color-surface) / 0.14);
-      }
-
-      .sidebar-link__chevron {
-        color: rgb(var(--color-primary));
+        background-color: rgb(var(--color-white) / 0.14);
       }
     }
   }
@@ -245,8 +245,8 @@
     width: 2rem;
     height: 2rem;
     border-radius: 9999px;
-    background-color: rgb(var(--color-surface) / 0.18);
-    color: rgb(var(--color-surface) / 0.95);
+    background-color: rgb(var(--color-white) / 0.18);
+    color: rgb(var(--color-white) / 0.95);
     font-size: 0.75rem;
     font-weight: 700;
     flex-shrink: 0;
@@ -260,7 +260,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: rgb(var(--color-surface) / 0.75);
+    color: rgb(var(--color-white) / 0.75);
     transition: transform 160ms ease, color 160ms ease;
 
     &.is-open {
@@ -292,7 +292,7 @@
   border: 0;
   border-radius: var(--radius-md);
   background: transparent;
-  color: rgb(var(--color-surface) / 0.92);
+  color: rgb(var(--color-white) / 0.92);
   cursor: pointer;
   padding-inline: var(--space-3);
   font: inherit;
@@ -300,14 +300,14 @@
   transition: background-color 160ms ease, color 160ms ease;
 
   &:hover {
-    background-color: rgb(var(--color-surface) / 0.08);
+    background-color: rgb(var(--color-white) / 0.08);
   }
 
   &__icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: rgb(var(--color-surface) / 0.75);
+    color: rgb(var(--color-white) / 0.75);
     transition: transform 160ms ease;
   }
 
@@ -354,7 +354,7 @@
   padding: 0;
   font-size: 0.75rem;
   line-height: 1.2;
-  color: rgb(var(--color-surface) / 0.72);
+  color: rgb(var(--color-white) / 0.72);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -365,7 +365,7 @@
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: rgb(var(--color-surface) / 0.82);
+    color: rgb(var(--color-white) / 0.82);
   }
 }
 

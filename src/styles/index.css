@@ -40,7 +40,7 @@
 
   body {
     background-color: rgb(var(--color-bg));
-    color: rgb(var(--color-text));
+    color: rgb(var(--color-dark));
     font-family: var(--sans);
   }
 

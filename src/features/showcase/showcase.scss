@@ -1,0 +1,199 @@
+/**
+ * Component Showcase Page Styles
+ * Displays the design system's button and badge components
+ */
+
+.showcase-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .showcase-header {
+    text-align: center;
+    margin-bottom: var(--space-4);
+
+    h1 {
+      margin: 0 0 var(--space-2) 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+
+    .showcase-subtitle {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--color-dark-secondary);
+    }
+  }
+
+  .showcase-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+
+    h2 {
+      margin: 0;
+      padding-bottom: var(--space-3);
+      font-size: 1.75rem;
+      font-weight: 600;
+      border-bottom: 2px solid var(--color-border);
+      color: var(--color-dark);
+    }
+
+    .showcase-subsection {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+
+      h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-dark);
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--space-4);
+
+        .showcase-item {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-2);
+          padding: var(--space-3);
+          background: var(--color-background-secondary);
+          border: 1px solid var(--color-border);
+          border-radius: var(--radius-md);
+          align-items: center;
+
+          .item-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-dark-secondary);
+            text-transform: capitalize;
+          }
+
+          button,
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+
+      .showcase-table {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+
+        .table-header {
+          display: grid;
+          grid-template-columns: 120px repeat(3, 1fr);
+          background: var(--color-background-secondary);
+          border-bottom: 2px solid var(--color-border);
+          font-weight: 600;
+          font-size: 0.875rem;
+          color: var(--color-dark-secondary);
+
+          .table-cell {
+            padding: var(--space-3);
+            text-align: center;
+            text-transform: capitalize;
+          }
+        }
+
+        .table-row {
+          display: grid;
+          grid-template-columns: 120px repeat(3, 1fr);
+          border-bottom: 1px solid var(--color-border);
+          align-items: center;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .table-cell {
+            padding: var(--space-3);
+            text-align: center;
+
+            &.variant-label {
+              font-weight: 500;
+              color: var(--color-dark-secondary);
+              text-transform: capitalize;
+              text-align: left;
+              background: var(--color-background-secondary);
+              border-right: 1px solid var(--color-border);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .showcase-container {
+    padding: var(--space-4);
+    gap: var(--space-6);
+
+    .showcase-header h1 {
+      font-size: 2rem;
+    }
+
+    .showcase-section {
+      .showcase-subsection {
+        .showcase-grid {
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+
+        .showcase-table {
+          .table-header,
+          .table-row {
+            grid-template-columns: 80px repeat(3, 1fr);
+
+            .table-cell {
+              padding: var(--space-2);
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-container {
+    .showcase-section {
+      .showcase-subsection {
+        .showcase-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .showcase-table {
+          .table-header,
+          .table-row {
+            grid-template-columns: 60px 1fr;
+
+            .table-cell {
+              padding: var(--space-2);
+              font-size: 0.7rem;
+
+              button {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -46,9 +46,69 @@
     color: rgb(var(--color-info));
   }
 
-  &--neutral {
-    background-color: rgb(var(--color-neutral) / 0.14);
-    border-color: rgb(var(--color-neutral) / 0.3);
-    color: rgb(var(--color-text));
+  &--blue {
+    background-color: rgb(var(--color-blue) / 0.14);
+    border-color: rgb(var(--color-blue) / 0.3);
+    color: rgb(var(--color-blue));
+  }
+
+  &--indigo {
+    background-color: rgb(var(--color-indigo) / 0.14);
+    border-color: rgb(var(--color-indigo) / 0.3);
+    color: rgb(var(--color-indigo));
+  }
+
+  &--purple {
+    background-color: rgb(var(--color-purple) / 0.14);
+    border-color: rgb(var(--color-purple) / 0.3);
+    color: rgb(var(--color-purple));
+  }
+
+  &--pink {
+    background-color: rgb(var(--color-pink) / 0.14);
+    border-color: rgb(var(--color-pink) / 0.3);
+    color: rgb(var(--color-pink));
+  }
+
+  &--orange {
+    background-color: rgb(var(--color-orange) / 0.14);
+    border-color: rgb(var(--color-orange) / 0.3);
+    color: rgb(var(--color-orange));
+  }
+
+  &--yellow {
+    background-color: rgb(var(--color-yellow) / 0.14);
+    border-color: rgb(var(--color-yellow) / 0.3);
+    color: rgb(var(--color-yellow));
+  }
+
+  &--teal {
+    background-color: rgb(var(--color-teal) / 0.14);
+    border-color: rgb(var(--color-teal) / 0.3);
+    color: rgb(var(--color-teal));
+  }
+
+  &--cyan {
+    background-color: rgb(var(--color-cyan) / 0.14);
+    border-color: rgb(var(--color-cyan) / 0.3);
+    color: rgb(var(--color-cyan));
+  }
+
+  &--gray {
+    background-color: rgb(var(--color-gray) / 0.14);
+    border-color: rgb(var(--color-gray) / 0.3);
+    color: rgb(var(--color-gray));
+  }
+
+  &--dark {
+    background-color: rgb(var(--color-dark) / 0.14);
+    border-color: rgb(var(--color-dark) / 0.3);
+    color: rgb(var(--color-dark));
+  }
+
+  &--ghost {
+    background-color: rgb(var(--color-light));
+    border-color: rgb(var(--color-neutral));
+    color: rgb(var(--color-dark));
   }
 }
