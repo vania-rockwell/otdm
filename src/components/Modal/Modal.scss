@@ -6,6 +6,17 @@
   place-items: center;
   background-color: rgb(var(--color-dark) / 0.45);
   padding: var(--space-4);
+  opacity: 0;
+  transition: opacity 0.18s ease-out;
+
+  &[data-state="open"] {
+    opacity: 1;
+  }
+
+  &[data-state="open"] .modal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .modal {
@@ -15,6 +26,25 @@
   background-color: rgb(var(--color-surface));
   color: rgb(var(--color-dark));
   box-shadow: 0 20px 40px rgb(var(--color-dark) / 0.25);
+  opacity: 0;
+  transform: translateY(var(--space-3)) scale(0.98);
+  transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+
+  &--sm {
+    width: min(24rem, 100%);
+  }
+
+  &--md {
+    width: min(38rem, 100%);
+  }
+
+  &--lg {
+    width: min(56rem, 100%);
+  }
+
+  &--xl {
+    width: min(72rem, 100%);
+  }
 
   &__header {
     display: flex;
@@ -32,11 +62,6 @@
 
   &__close {
     min-height: var(--size-control-sm);
-    border: 1px solid rgb(var(--color-neutral));
-    border-radius: var(--radius-md);
-    background-color: rgb(var(--color-bg));
-    color: rgb(var(--color-dark));
-    padding-inline: var(--space-3);
     cursor: pointer;
   }
 

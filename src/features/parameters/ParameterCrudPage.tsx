@@ -5,8 +5,10 @@ import Badge from "../../components/Badge/Badge";
 import type { BadgeColor } from "../../components/Badge/Badge";
 import { Plus } from "lucide-react";
 import { Button } from "../../components/Button/Button";
+import Modal from "../../components/Modal/Modal";
 import PageSection from "../../components/PageSection/PageSection";
 import Select from "../../components/Select/Select";
+import Snackbar from "../../components/Snackbar/Snackbar";
 import "./ParameterCrudPage.scss";
 
 type ParameterCrudMode = "new" | "edit" | "delete";
@@ -23,8 +25,16 @@ type DomainOption = {
 
 const domainOptions: DomainOption[] = [
   { id: "production", label: "Production", color: "primary" },
-  { id: "batch", label: "Batch", color: "danger" },
-  { id: "machine-event", label: "Machine Event", color: "warning" },
+  { id: "batch", label: "Batch", color: "ghost" },
+  { id: "machine-event", label: "Machine Event", color: "gray" },
+  { id: "line-view", label: "Line View", color: "blue" },
+  { id: "filler", label: "Filler", color: "indigo" },
+  { id: "vials", label: "Vials", color: "purple" },
+  { id: "injection", label: "Injection", color: "pink" },
+  { id: "transport", label: "Transport", color: "orange" },
+  { id: "inspection", label: "Inspection", color: "yellow" },
+  { id: "maintenance", label: "Maintenance", color: "teal" },
+  { id: "calibration", label: "Calibration", color: "dark" },
 ];
 
 const dataTypeOptions = [
@@ -39,9 +49,32 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
 
   const [name, setName] = useState(mode === "new" ? "" : "BatchStart");
   const [dataType, setDataType] = useState(mode === "new" ? "boolean" : "boolean");
-  const [selectedDomains] = useState<string[]>(
+  const [selectedDomains, setSelectedDomains] = useState<string[]>(
     mode === "new" ? ["production"] : ["production", "batch"]
   );
+  const [domainModalOpen, setDomainModalOpen] = useState(false);
+  const [draftDomains, setDraftDomains] = useState<string[]>(selectedDomains);
+  const [submitSnackbarOpen, setSubmitSnackbarOpen] = useState(false);
+
+  const openDomainModal = () => {
+    setDraftDomains(selectedDomains);
+    setDomainModalOpen(true);
+  };
+
+  const closeDomainModal = () => setDomainModalOpen(false);
+
+  const toggleDraftDomain = (id: string) => {
+    setDraftDomains((prev) =>
+      prev.includes(id)
+        ? prev.length > 1 ? prev.filter((d) => d !== id) : prev
+        : [...prev, id]
+    );
+  };
+
+  const confirmDomains = () => {
+    setSelectedDomains(draftDomains);
+    setDomainModalOpen(false);
+  };
 
   const title = useMemo(() => {
     if (mode === "new") return t("parameterCrud.newTitle");
@@ -64,8 +97,20 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
 
   const handleSubmit: React.ComponentProps<"form">["onSubmit"] = (event) => {
     event.preventDefault();
-    navigate("/parameters");
+    setSubmitSnackbarOpen(true);
+    window.setTimeout(() => navigate("/parameters"), 3000);
   };
+
+  const submitConfirmationVariant = useMemo(() => {
+    if (mode === "delete") return "danger";
+    return "success";
+  }, [mode]);
+
+  const submitConfirmationMessage = useMemo(() => {
+    if (mode === "new") return t("parameterCrud.submitSuccess.create");
+    if (mode === "edit") return t("parameterCrud.submitSuccess.save");
+    return t("parameterCrud.submitSuccess.delete");
+  }, [mode, t]);
 
   return (
     <PageSection title={title} description={t("parameterCrud.description")}>
@@ -74,7 +119,7 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
           <div className="parameter-crud__label-row">
             <span className="parameter-crud__label">{t("parameterCrud.fields.capabilityDomain")}</span>
             {!isDelete && 
-              <Button size="sm" variant="secondary" type="button" icon={Plus} onClick={() => { /* Add domain logic */ }}>
+              <Button size="sm" variant="secondary" type="button" icon={Plus} onClick={openDomainModal}>
                 {t("parameterCrud.actions.addCapabilityDomain")}
               </Button>
             }
@@ -114,6 +159,42 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
 
         {isDelete && <p className="parameter-crud__warning">{t("parameterCrud.deleteWarning")}</p>}
 
+        <Modal
+          open={domainModalOpen}
+          title={t("parameterCrud.fields.capabilityDomain")}
+          onClose={closeDomainModal}
+          size="md"
+          actions={
+            <>
+              <Button type="button" variant="ghost" onClick={closeDomainModal}>
+                {t("parameterCrud.actions.cancel")}
+              </Button>
+              <Button type="button" variant="primary" onClick={confirmDomains}>
+                {t("parameterCrud.actions.confirm")}
+              </Button>
+            </>
+          }
+        >
+          <div className="parameter-crud__domain-picker">
+            {domainOptions.map((option) => {
+              const selected = draftDomains.includes(option.id);
+              const isOnlySelected = selected && draftDomains.length === 1;
+              return (
+                <button
+                  key={option.id}
+                  type="button"
+                  className={`parameter-crud__domain-option${selected ? " parameter-crud__domain-option--selected" : ""}${isOnlySelected ? " parameter-crud__domain-option--locked" : ""}`}
+                  onClick={() => toggleDraftDomain(option.id)}
+                  aria-pressed={selected}
+                  title={isOnlySelected ? t("parameterCrud.atLeastOneDomain") : undefined}
+                >
+                  <Badge color={option.color}>{option.label}</Badge>
+                </button>
+              );
+            })}
+          </div>
+        </Modal>
+
         <div className="parameter-crud__footer">
           <Button type="button" variant="ghost" onClick={() => navigate("/parameters")}>
             {t("parameterCrud.actions.cancel")}
@@ -122,6 +203,14 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
             {submitLabel}
           </Button>
         </div>
+
+        <Snackbar
+          open={submitSnackbarOpen}
+          onClose={() => setSubmitSnackbarOpen(false)}
+          variant={submitConfirmationVariant}
+          message={submitConfirmationMessage}
+          autoHideMs={2500}
+        />
       </form>
     </PageSection>
   );

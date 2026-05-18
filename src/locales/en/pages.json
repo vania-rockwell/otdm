@@ -50,7 +50,14 @@
       "create": "Create",
       "save": "Save",
       "delete": "Delete",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "atLeastOneDomain": "At least one domain must be selected",
+    "submitSuccess": {
+      "create": "Parameter created successfully.",
+      "save": "Parameter updated successfully.",
+      "delete": "Parameter deleted successfully."
     }
   },
   "templates": {

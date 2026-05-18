@@ -58,6 +58,40 @@
 		font-weight: 600;
 	}
 
+	&__domain-picker {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+
+	&__domain-option {
+		padding: 0;
+		border: 2px solid transparent;
+		border-radius: 50rem;
+		background: none;
+		cursor: pointer;
+		opacity: 0.8;
+		transition: opacity 0.15s, border-color 0.15s;
+		line-height: 1;
+
+		&--selected {
+			opacity: 1;
+			border-color: rgb(var(--color-neutral));
+		}
+
+		&--locked {
+			cursor: not-allowed;
+		}
+
+		&:hover:not(&--locked) {
+			opacity: 0.75;
+		}
+
+		&--selected:hover:not(&--locked) {
+			opacity: 1;
+		}
+	}
+
 	&__footer {
 		display: flex;
 		justify-content: flex-end;

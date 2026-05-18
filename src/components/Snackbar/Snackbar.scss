@@ -1,16 +1,38 @@
 .snackbar {
   position: fixed;
   right: var(--space-4);
-  bottom: var(--space-4);
   z-index: 60;
   display: flex;
   align-items: center;
   gap: var(--space-3);
   min-height: var(--size-control-md);
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4);
+  min-width: 20rem;
+  max-width: 28rem;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
   color: rgb(var(--color-bg));
   box-shadow: 0 8px 20px rgb(var(--color-dark) / 0.2);
+  transform: translateX(calc(100% + var(--space-4)));
+  opacity: 0;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+
+  &--top-right {
+    top: var(--space-5);
+  }
+
+  &--bottom-right {
+    bottom: var(--space-5);
+  }
+
+  &[data-state="open"] {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &[data-state="closed"] {
+    transform: translateX(calc(100% + var(--space-4)));
+    opacity: 0;
+  }
 
   &--info {
     background-color: rgb(var(--color-info));
@@ -28,13 +50,45 @@
     background-color: rgb(var(--color-danger));
   }
 
+  &__message {
+    flex: 1;
+  }
+
   &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--size-control-sm);
     min-height: var(--size-control-sm);
-    border: 1px solid rgb(var(--color-bg) / 0.5);
-    border-radius: var(--radius-sm);
+    border-radius: 9999px;
     background: transparent;
     color: inherit;
-    padding-inline: var(--space-2);
     cursor: pointer;
+    transition: background-color 0.15s ease-out;
+
+    &:hover {
+      background-color: rgb(var(--color-bg) / 0.15);
+    }
+  }
+
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: rgb(var(--color-bg) / 0.6);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    transform-origin: left;
+    animation: snackbar-progress linear forwards;
+  }
+}
+
+@keyframes snackbar-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
   }
 }
