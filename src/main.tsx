@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import { ThemeProvider } from "./features/theme/ThemeProvider";
+import { ThemeProvider } from "./ThemeProvider";
 import "./locales/i18n";
 import "./styles/index.css";
 

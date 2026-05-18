@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import PageSection from "../../components/PageSection/PageSection";
 import { Button } from "../../components/Button/Button";
 import Select from "../../components/Select/Select";
-import { useTheme } from "../theme/ThemeProvider";
+import { useTheme } from "../../ThemeProvider";
 import i18n from "../../locales/i18n";
 import "./ApplicationPage.scss";
 

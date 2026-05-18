@@ -88,11 +88,6 @@
     "title": "Aplicación",
     "description": "Revise las opciones a nivel de aplicación y la configuración operativa."
   },
-  "parametersGroups": {
-    "title": "Grupos de parámetros",
-    "description": "Administre conjuntos de parámetros agrupados y su organización.",
-    "body": "Use esta sección para explorar y mantener estructuras agrupadas de parámetros."
-  },
   "templatesCustom": {
     "title": "Plantillas personalizadas",
     "description": "Cree y administre plantillas personalizadas.",

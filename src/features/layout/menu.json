@@ -4,8 +4,7 @@
       "id": "dashboard",
       "path": "/",
       "labelKey": "nav.dashboard",
-      "icon": "Home",
-      "end": true
+      "icon": "Home"
     },
     {
       "id": "catalogs",
@@ -17,21 +16,7 @@
       "id": "parameters",
       "path": "/parameters",
       "labelKey": "nav.parameters",
-      "icon": "SlidersHorizontal",
-      "children": [
-        {
-          "id": "parameters-list",
-          "path": "/parameters",
-          "labelKey": "nav.parametersList",
-          "level": 2
-        },
-        {
-          "id": "parameters-groups",
-          "path": "/parameters/groups",
-          "labelKey": "nav.parametersGroups",
-          "level": 2
-        }
-      ]
+      "icon": "SlidersHorizontal"
     },
     {
       "id": "templates",

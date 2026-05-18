@@ -88,11 +88,6 @@
     "title": "Applicazione",
     "description": "Rivedi opzioni a livello applicativo e impostazioni operative."
   },
-  "parametersGroups": {
-    "title": "Gruppi di parametri",
-    "description": "Gestisci insiemi di parametri raggruppati e la loro organizzazione.",
-    "body": "Usa questa sezione per consultare e mantenere strutture di parametri raggruppati."
-  },
   "templatesCustom": {
     "title": "Modelli personalizzati",
     "description": "Crea e gestisci modelli personalizzati.",

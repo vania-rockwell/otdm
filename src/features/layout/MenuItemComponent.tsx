@@ -10,7 +10,6 @@ export type MenuItem = {
   icon?: string;
   children?: MenuItem[];
   level?: number;
-  end?: boolean;
 };
 
 type MenuItemProps = {
@@ -35,13 +34,56 @@ export function MenuItemComponent({
     setIsOpen((prev) => !prev);
   };
 
+  const normalizePath = (path: string): string =>
+    path.endsWith("/") ? path.slice(0, -1) : path;
+
+  const getFirstRouteLevel = (path: string): string => {
+    const normalizedPath = normalizePath(path);
+    const [firstSegment] = normalizedPath.split("/").filter(Boolean);
+
+    return firstSegment ? `/${firstSegment}` : "/";
+  };
+
+  const isSameOrNestedPath = (candidatePath: string, pathname: string): boolean => {
+    const normalizedCandidate = normalizePath(candidatePath);
+    const normalizedPathname = normalizePath(pathname);
+
+    return (
+      normalizedPathname === normalizedCandidate ||
+      normalizedPathname.startsWith(`${normalizedCandidate}/`)
+    );
+  };
+
+  const isDirectMatch = (menuItem: MenuItem, pathname: string): boolean => {
+    if (!menuItem.path) {
+      return false;
+    }
+
+    if (menuItem.id === "dashboard") {
+      return false;
+    }
+
+    if ((menuItem.level ?? 1) === 1) {
+      return isSameOrNestedPath(getFirstRouteLevel(menuItem.path), pathname);
+    }
+
+    if (menuItem.children?.length) {
+      return isSameOrNestedPath(menuItem.path, pathname);
+    }
+
+    return normalizePath(menuItem.path) === normalizePath(pathname);
+  };
+
+  const isMenuItemActive = (menuItem: MenuItem, pathname: string): boolean =>
+    isDirectMatch(menuItem, pathname);
+
   const hasActiveDescendant = (menuItem: MenuItem, pathname: string): boolean => {
     if (!menuItem.children?.length) {
       return false;
     }
 
     return menuItem.children.some((child) => {
-      if (child.path === pathname) {
+      if (child.path && isSameOrNestedPath(child.path, pathname)) {
         return true;
       }
       return hasActiveDescendant(child, pathname);
@@ -50,7 +92,9 @@ export function MenuItemComponent({
 
   // Items with children: render as a toggle button (no navigation)
   if (hasChildren) {
-    const isActiveParent = hasActiveDescendant(item, location.pathname);
+    const isActiveParent =
+      isMenuItemActive(item, location.pathname) ||
+      hasActiveDescendant(item, location.pathname);
 
     return (
       <div className={`sidebar-link-wrapper sidebar-link-wrapper--level-${level}`}>
@@ -92,15 +136,16 @@ export function MenuItemComponent({
   }
 
   // Leaf item: render as NavLink
+  const isActiveLeaf = isMenuItemActive(item, location.pathname);
+
   return (
     <div
       className={`sidebar-link-wrapper sidebar-link-wrapper--level-${level}`}
     >
       <NavLink
         to={item.path ?? "#"}
-        end={item.end ?? true}
-        className={({ isActive }) =>
-          `sidebar-link sidebar-link--level-${level} ${isActive ? "is-active" : ""}`
+        className={() =>
+          `sidebar-link sidebar-link--level-${level} ${isActiveLeaf ? "is-active" : ""}`
         }
         title={collapsed ? t(item.labelKey) : undefined}
       >

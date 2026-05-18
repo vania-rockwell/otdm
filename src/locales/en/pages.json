@@ -88,11 +88,6 @@
     "title": "Application",
     "description": "Review application-level options and operational settings."
   },
-  "parametersGroups": {
-    "title": "Parameter Groups",
-    "description": "Manage grouped parameter sets and organization.",
-    "body": "Use this section to browse and maintain grouped parameter structures."
-  },
   "templatesCustom": {
     "title": "Custom Templates",
     "description": "Create and manage custom templates.",

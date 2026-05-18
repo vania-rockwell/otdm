@@ -3,7 +3,6 @@ import App from "./App";
 import DashboardPage from "./features/dashboard/DashboardPage";
 import CatalogsPage from "./features/catalogs/CatalogsPage";
 import ParametersPage from "./features/parameters/ParametersPage";
-import ParametersGroupsPage from "./features/parameters/ParametersGroupsPage";
 import ParameterCrudPage from "./features/parameters/ParameterCrudPage";
 import TemplatesPage from "./features/templates/TemplatesPage";
 import TemplatesCustomPage from "./features/templates/TemplatesCustomPage";
@@ -36,7 +35,6 @@ export const router = createBrowserRouter([
         path: "parameters/:parameterId/delete",
         element: <ParameterCrudPage mode="delete" />,
       },
-      { path: "parameters/groups", element: <ParametersGroupsPage /> },
       { path: "templates", element: <TemplatesPage /> },
       { path: "templates/custom", element: <TemplatesCustomPage /> },
       { path: "asset-configuration", element: <AssetConfigurationPage /> },

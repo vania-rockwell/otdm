@@ -18,6 +18,14 @@ npm run lint       # run ESLint across the project
 
 ## Best Practices
 
+### Developer Workflow
+
+- Start by locating the feature folder in `src/features/*` and review related shared components in `src/components/*`.
+- Keep route work synchronized across `src/router.tsx`, `src/features/layout/menu.json`, and `src/locales/*/pages.json`.
+- Keep API calls in `src/services/*` and route all HTTP traffic through `src/services/internalRouter.ts`.
+- Reuse design tokens and shared components instead of introducing one-off styles or duplicated UI logic.
+- Before opening a PR, run `npm run lint` and `npm run build` and resolve all reported issues.
+
 ### Styles
 
 | Layer | Location | Purpose |
@@ -66,11 +74,9 @@ src/
 ├── locales/             # i18n namespaces (one JSON file per domain per language)
 │   ├── en/
 │   │   ├── common.json
-│   │   ├── layout.json
 │   │   └── pages.json
 │   ├── es/
 │   │   ├── common.json
-│   │   ├── layout.json
 │   │   └── pages.json
 │   └── i18n.ts
 ├── services/            # API clients and external service integrations
@@ -142,10 +148,9 @@ export async function getCatalogs() {
 | Namespace | JSON | Typical keys |
 |-----------|------|---------------|
 | `common` | `common.json` | Shared labels, buttons, aria text, theme/language option labels (`actions.*`, `aria.*`, `fields.*`). |
-| `layout` | `layout.json` | App chrome: `brand.appName`, sidebar `nav.*` (must stay aligned with `layout.config.ts` `labelKey` values). |
 | `pages` | `pages.json` | Screen copy grouped by route: `dashboard.title`, `catalogs.body`, etc. Mirror feature folder naming where it helps (`assetConfiguration`, `notFound`). |
 
-- In components: `useTranslation("pages")`, `useTranslation("layout")`, or `useTranslation("common")`, then dot keys (`t("dashboard.title")`).
+- In components: `useTranslation("pages")`, or `useTranslation("common")`, then dot keys (`t("dashboard.title")`).
 - **`document.documentElement.lang`** and **`document.title`** are synced when the locale or translations change (via `brand.appName` in `layout`).
 - To add a language: duplicate `src/locales/en/*.json` into `src/locales/{lang}/`, import those files in `i18n.ts`, and extend the `resources` map and language selector options in Application settings (`common.languageOption`).
 - Avoid hard-coded user-facing strings outside tests and Storybook stubs.
@@ -173,6 +178,14 @@ export async function getCatalogs() {
 - Use `React.forwardRef` when the component wraps a native element that consumers may need to ref (e.g. `Button`, `Select`).
 - Prefer composition over configuration: pass `children` or render-prop slots rather than deeply nested option objects.
 - Provide sensible defaults for optional props (`variant = "primary"`, `size = "md"`).
+
+### Icons
+
+- Use `lucide-react` for all UI icons.
+- Do not introduce other icon packs (e.g. Heroicons, Font Awesome, Material Icons) unless explicitly requested.
+- Import icons by name from `lucide-react` and render them as React components.
+- Keep icon presentation controlled by CSS tokens (`currentColor`, `--color-*`) so icons follow the active theme.
+- For icon-only interactive controls, always provide an accessible label (`aria-label`) on the button/link.
 
 ---
 
