@@ -66,7 +66,7 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
   const toggleDraftDomain = (id: string) => {
     setDraftDomains((prev) =>
       prev.includes(id)
-        ? prev.length > 1 ? prev.filter((d) => d !== id) : prev
+        ? prev.filter((item) => item !== id)
         : [...prev, id]
     );
   };
@@ -178,15 +178,13 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
           <div className="parameter-crud__domain-picker">
             {domainOptions.map((option) => {
               const selected = draftDomains.includes(option.id);
-              const isOnlySelected = selected && draftDomains.length === 1;
               return (
                 <button
                   key={option.id}
                   type="button"
-                  className={`parameter-crud__domain-option${selected ? " parameter-crud__domain-option--selected" : ""}${isOnlySelected ? " parameter-crud__domain-option--locked" : ""}`}
+                  className={`parameter-crud__domain-option${selected ? " parameter-crud__domain-option--selected" : ""}`}
                   onClick={() => toggleDraftDomain(option.id)}
                   aria-pressed={selected}
-                  title={isOnlySelected ? t("parameterCrud.atLeastOneDomain") : undefined}
                 >
                   <Badge color={option.color}>{option.label}</Badge>
                 </button>

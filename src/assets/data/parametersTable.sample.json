@@ -6,8 +6,8 @@
       "name": "BatchStart",
       "dataType": "Boolean",
       "contexts": [
-        { "label": "Production", "color": "primary" },
-        { "label": "Batch", "color": "secondary" }
+        { "label": "Vials", "color": "purple" },
+        { "label": "Batch", "color": "blue" }
       ]
     },
     {
@@ -16,8 +16,6 @@
       "name": "BatchStop",
       "dataType": "Boolean",
       "contexts": [
-        { "label": "Production", "color": "primary" },
-        { "label": "Batch", "color": "secondary" }
       ]
     },
     {
@@ -27,7 +25,7 @@
       "dataType": "Boolean",
       "contexts": [
         { "label": "Production", "color": "primary" },
-        { "label": "Machine Event", "color": "warning" }
+        { "label": "Machine Event", "color": "gray" }
       ]
     }
   ]
