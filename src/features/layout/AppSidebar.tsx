@@ -38,8 +38,7 @@ export default function AppSidebar({
   collapsed,
   onToggleCollapsed,
 }: AppSidebarProps) {
-  const { t } = useTranslation("layout");
-  const { t: tc } = useTranslation("common");
+  const { t } = useTranslation("common");
   const appVersion = APP_VERSION;
   const appVersionShort = `V${appVersion.replace(/^v/i, "")}`;
 
@@ -65,7 +64,7 @@ export default function AppSidebar({
           className="sidebar-toggle"
           onClick={onToggleCollapsed}
           aria-label={
-            collapsed ? tc("aria.expandMenu") : tc("aria.collapseMenu")
+            collapsed ? t("aria.expandMenu") : t("aria.collapseMenu")
           }
         >
           <Menu size={18} aria-hidden="true" />
@@ -78,7 +77,7 @@ export default function AppSidebar({
       {/* Main navigation */}
       <nav
         className="sidebar-nav"
-        aria-label={tc("aria.mainNavigation")}
+        aria-label={t("aria.mainNavigation")}
       >
         {menuData.items.map((item) => (
           <MenuItemComponent

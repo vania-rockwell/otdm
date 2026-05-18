@@ -13,20 +13,13 @@
     "title": "Parámetros",
     "description": "Defina y mantenga los parámetros de configuración.",
     "body": "Los parámetros controlan el comportamiento del sistema y los valores predeterminados en los módulos configurados.",
-    "searchPlaceholder": "Buscar",
     "searchAria": "Buscar parámetros",
     "loading": "Cargando parámetros...",
     "loadError": "No se pudieron cargar los parámetros.",
-    "actions": {
-      "addNew": "Agregar nuevo",
-      "edit": "Editar",
-      "delete": "Eliminar"
-    },
     "table": {
       "empty": "No se encontraron parámetros.",
       "headers": {
         "capabilityDomain": "Dominio de capacidad",
-        "name": "Nombre",
         "dataType": "Tipo de dato",
         "contexts": "Contextos",
         "actions": "Acciones"
@@ -41,23 +34,14 @@
     "deleteWarning": "Esta acción elimina la definición del parámetro. Confirme antes de continuar.",
     "fields": {
       "capabilityDomain": "Dominio de capacidad",
-      "name": "Nombre",
       "dataType": "Tipo de dato"
     },
-    "actions": {
-      "addNew": "Agregar nuevo",
-      "addCapabilityDomain": "Agregar dominio de capacidad",
-      "create": "Crear",
-      "save": "Guardar",
-      "delete": "Eliminar",
-      "cancel": "Cancelar",
-      "confirm": "Confirmar"
-    },
+    "addCapabilityDomain": "Agregar dominio de capacidad",
     "atLeastOneDomain": "Al menos un dominio debe estar seleccionado",
     "submitSuccess": {
-      "create": "Parametro creado correctamente.",
-      "save": "Parametro actualizado correctamente.",
-      "delete": "Parametro eliminado correctamente."
+      "create": "Parámetro creado correctamente.",
+      "save": "Parámetro actualizado correctamente.",
+      "delete": "Parámetro eliminado correctamente."
     }
   },
   "templates": {
@@ -96,7 +80,6 @@
     "connectivityStatusStandby": "En espera",
     "detailFormAppName": "Nombre de la aplicación",
     "detailFormAppVersion": "Versión",
-    "detailFormSave": "Guardar",
     "fieldId": "Identificador",
     "fieldValue": "Valor",
     "fieldSubitems": "Subelementos"

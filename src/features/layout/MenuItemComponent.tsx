@@ -24,7 +24,7 @@ export function MenuItemComponent({
   collapsed,
   iconMap,
 }: MenuItemProps) {
-  const { t } = useTranslation("layout");
+  const { t } = useTranslation("common");
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const hasChildren = item.children && item.children.length > 0;

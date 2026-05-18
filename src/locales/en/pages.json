@@ -13,20 +13,13 @@
     "title": "Parameters",
     "description": "Define and maintain configuration parameters.",
     "body": "Parameters control system behavior and defaults across configured modules.",
-    "searchPlaceholder": "Search",
     "searchAria": "Search parameters",
     "loading": "Loading parameters...",
     "loadError": "Could not load parameters.",
-    "actions": {
-      "addNew": "Add New",
-      "edit": "Edit",
-      "delete": "Delete"
-    },
     "table": {
       "empty": "No parameters found.",
       "headers": {
         "capabilityDomain": "Capability Domain",
-        "name": "Name",
         "dataType": "Data Type",
         "contexts": "Contexts",
         "actions": "Actions"
@@ -41,18 +34,9 @@
     "deleteWarning": "This action removes the parameter definition. Please confirm before continuing.",
     "fields": {
       "capabilityDomain": "Capability Domain",
-      "name": "Name",
       "dataType": "Data Type"
     },
-    "actions": {
-      "addNew": "Add New",
-      "addCapabilityDomain": "Add Capability Domain",
-      "create": "Create",
-      "save": "Save",
-      "delete": "Delete",
-      "cancel": "Cancel",
-      "confirm": "Confirm"
-    },
+    "addCapabilityDomain": "Add Capability Domain",
     "atLeastOneDomain": "At least one domain must be selected",
     "submitSuccess": {
       "create": "Parameter created successfully.",
@@ -96,7 +80,6 @@
     "connectivityStatusStandby": "Standby",
     "detailFormAppName": "Application name",
     "detailFormAppVersion": "Version",
-    "detailFormSave": "Save",
     "fieldId": "Identifier",
     "fieldValue": "Value",
     "fieldSubitems": "Sub-items"

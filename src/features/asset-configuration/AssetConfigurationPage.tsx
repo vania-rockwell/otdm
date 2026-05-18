@@ -143,7 +143,7 @@ function AssetConfigurationDetailPanel({ node, emptyLabel }: { node: TreeNode | 
             </label>
             <div className="asset-configuration-detail-form__actions">
               <Button type="submit" variant="secondary" disabled>
-                {t("assetConfiguration.detailFormSave")}
+                {t("common:actions.save")}
               </Button>
             </div>
           </form>

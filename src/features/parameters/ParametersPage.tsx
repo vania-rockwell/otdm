@@ -65,7 +65,7 @@ export default function ParametersPage() {
     },
     {
       key: "name",
-      header: t("parameters.table.headers.name"),
+      header: t("common:fields.name"),
     },
     {
       key: "dataType",
@@ -121,14 +121,14 @@ export default function ParametersPage() {
           <input
             type="search"
             className="parameters-page__search"
-            placeholder={t("parameters.searchPlaceholder")}
+            placeholder={t("common:actions.search")}
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             aria-label={t("parameters.searchAria")}
           />
 
           <Button variant="secondary" size="sm" onClick={() => navigate("/parameters/new")} icon={Plus}>
-            {t("parameters.actions.addNew")}
+            {t("common:actions.add")}
           </Button>
         </div>
 

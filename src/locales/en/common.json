@@ -1,5 +1,13 @@
 {
   "actions": {
+    "add": "Add",
+    "create": "Create",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "search": "Search",
     "close": "Close",
     "dismiss": "Dismiss",
     "darkMode": "Dark mode",
@@ -12,6 +20,7 @@
     "mainNavigation": "Main navigation"
   },
   "fields": {
+    "name": "Name",
     "theme": "Theme",
     "language": "Language"
   },
@@ -19,5 +28,30 @@
     "en": "English",
     "es": "Español",
     "it": "Italian"
+  },
+  "brand": {
+    "appName": "Data Configuration Hub"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "catalogs": "Catalogs",
+    "parameters": "Parameters",
+    "parametersList": "Parameters List",
+    "parametersGroups": "Parameter Groups",
+    "templates": "Templates",
+    "templatesLibrary": "Template Library",
+    "templatesCustom": "Custom Templates",
+    "assetConfiguration": "Asset Configuration",
+    "application": "Application",
+    "applicationInfo": "Application Info",
+    "applicationModules": "Modules",
+    "modulesIntegration": "Integration",
+    "modulesReporting": "Reporting",
+    "security": "Security",
+    "securityUsers": "Users",
+    "securityPermissions": "Permissions",
+    "logOut": "Log Out",
+    "user": "User",
+    "version": "Version"
   }
 }

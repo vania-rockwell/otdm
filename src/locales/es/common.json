@@ -1,5 +1,13 @@
 {
   "actions": {
+    "add": "Agregar",
+    "create": "Crear",
+    "edit": "Editar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar",
+    "search": "Buscar",
     "close": "Cerrar",
     "dismiss": "Descartar",
     "darkMode": "Modo oscuro",
@@ -12,12 +20,38 @@
     "mainNavigation": "Navegación principal"
   },
   "fields": {
+    "name": "Nombre",
     "theme": "Tema",
     "language": "Idioma"
   },
   "languageOption": {
-    "en": "English",
+    "en": "Inglés",
     "es": "Español",
     "it": "Italiano"
+  },
+  "brand": {
+    "appName": "Data Configuration Hub"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "catalogs": "Catálogos",
+    "parameters": "Parámetros",
+    "parametersList": "Lista de parámetros",
+    "parametersGroups": "Grupos de parámetros",
+    "templates": "Plantillas",
+    "templatesLibrary": "Biblioteca de plantillas",
+    "templatesCustom": "Plantillas personalizadas",
+    "assetConfiguration": "Configuración de activos",
+    "application": "Aplicación",
+    "applicationInfo": "Información de aplicación",
+    "applicationModules": "Módulos",
+    "modulesIntegration": "Integración",
+    "modulesReporting": "Informes",
+    "security": "Seguridad",
+    "securityUsers": "Usuarios",
+    "securityPermissions": "Permisos",
+    "logOut": "Cerrar sesión",
+    "user": "Usuario",
+    "version": "Versión"
   }
 }

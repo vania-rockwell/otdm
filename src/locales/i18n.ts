@@ -2,13 +2,10 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import commonEn from "./en/common.json";
-import layoutEn from "./en/layout.json";
 import pagesEn from "./en/pages.json";
 import commonEs from "./es/common.json";
-import layoutEs from "./es/layout.json";
 import pagesEs from "./es/pages.json";
 import commonIt from "./it/common.json";
-import layoutIt from "./it/layout.json";
 import pagesIt from "./it/pages.json";
 
 export const LOCALE_STORAGE_KEY = "dch.locale";
@@ -28,13 +25,13 @@ function getInitialLanguage(): string {
 
 function syncDocumentFromI18n(): void {
   document.documentElement.lang = i18n.language;
-  document.title = i18n.t("brand.appName", { ns: "layout" });
+  document.title = i18n.t("brand.appName", { ns: "common" });
 }
 
 const resources = {
-  en: { common: commonEn, layout: layoutEn, pages: pagesEn },
-  es: { common: commonEs, layout: layoutEs, pages: pagesEs },
-  it: { common: commonIt, layout: layoutIt, pages: pagesIt },
+  en: { common: commonEn, pages: pagesEn },
+  es: { common: commonEs, pages: pagesEs },
+  it: { common: commonIt, pages: pagesIt },
 };
 
 i18n.on("languageChanged", (lng) => {
@@ -52,7 +49,7 @@ i18n.use(initReactI18next).init(
     load: "languageOnly",
     fallbackLng: "en",
     defaultNS: "common",
-    ns: ["common", "layout", "pages"],
+    ns: ["common", "pages"],
     interpolation: { escapeValue: false },
   },
   syncDocumentFromI18n,

@@ -83,9 +83,9 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
   }, [mode, t]);
 
   const submitLabel = useMemo(() => {
-    if (mode === "new") return t("parameterCrud.actions.create");
-    if (mode === "edit") return t("parameterCrud.actions.save");
-    return t("parameterCrud.actions.delete");
+    if (mode === "new") return t("common:actions.add");
+    if (mode === "edit") return t("common:actions.save");
+    return t("common:actions.delete");
   }, [mode, t]);
 
   const isDelete = mode === "delete";
@@ -120,7 +120,7 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
             <span className="parameter-crud__label">{t("parameterCrud.fields.capabilityDomain")}</span>
             {!isDelete && 
               <Button size="sm" variant="secondary" type="button" icon={Plus} onClick={openDomainModal}>
-                {t("parameterCrud.actions.addCapabilityDomain")}
+                {t("parameterCrud.addCapabilityDomain")}
               </Button>
             }
           </div>
@@ -134,7 +134,7 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
         </div>
 
         <label className="parameter-crud__field" htmlFor="parameter-name-input">
-          <span className="parameter-crud__label">{t("parameterCrud.fields.name")}</span>
+          <span className="parameter-crud__label">{t("common:fields.name")}</span>
           <input
             id="parameter-name-input"
             className="parameter-crud__input"
@@ -167,10 +167,10 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
           actions={
             <>
               <Button type="button" variant="ghost" onClick={closeDomainModal}>
-                {t("parameterCrud.actions.cancel")}
+                {t("common:actions.cancel")}
               </Button>
               <Button type="button" variant="primary" onClick={confirmDomains}>
-                {t("parameterCrud.actions.confirm")}
+                {t("common:actions.confirm")}
               </Button>
             </>
           }
@@ -197,7 +197,7 @@ export default function ParameterCrudPage({ mode }: ParameterCrudPageProps) {
 
         <div className="parameter-crud__footer">
           <Button type="button" variant="ghost" onClick={() => navigate("/parameters")}>
-            {t("parameterCrud.actions.cancel")}
+            {t("common:actions.cancel")}
           </Button>
           <Button type="submit" variant={isDelete ? "danger" : "primary"}>
             {submitLabel}
